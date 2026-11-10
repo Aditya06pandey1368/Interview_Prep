@@ -1,0 +1,25 @@
+{
+  "name": "interview_prep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aditya06pandey1368/Interview_Prep.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Aditya06pandey1368/Interview_Prep/issues"
+  },
+  "homepage": "https://github.com/Aditya06pandey1368/Interview_Prep#readme",
+  "dependencies": {
+    "express": "^5.3.0",
+    "nodemon": "^3.1.14"
+  }
+}
