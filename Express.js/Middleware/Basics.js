@@ -38,3 +38,7 @@ app.use(logger);
 app.use(express.json());
 app.use(logger);
 app.use(authMiddleware);
+
+
+//Authorization Header
+//An Authorization header is a part of an HTTP request used by the client to send authentication credentials to the server.
