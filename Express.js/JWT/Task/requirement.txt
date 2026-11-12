@@ -1,0 +1,30 @@
+Requirements:
+
+1. Signup API — POST /signup
+- Receive name, email and password.
+- Validate all fields.
+- Check whether the email already exists.
+- Hash the password using bcrypt.
+- Store the user in an array.
+2. Login API — POST /login
+- Receive email and password.
+- Find the user by email.
+- Compare password using bcrypt.
+- Generate a JWT using jwt.sign().
+- Set token expiration to one hour.
+- Return the token.
+3. Authentication Middleware
+- Read the Authorization header.
+- Extract the token from the Bearer format.
+- Verify the token using jwt.verify().
+- Handle missing, malformed and invalid tokens.
+- Attach verified user information to req.
+4. Protected API — GET /profile
+- Apply authentication middleware.
+- Return the authenticated user's name and email.
+- Never return their password or password hash.
+5. Handle errors
+- Missing fields → 400
+- Duplicate email → 409
+- Invalid login credentials → 401
+- Missing or invalid token → 401
