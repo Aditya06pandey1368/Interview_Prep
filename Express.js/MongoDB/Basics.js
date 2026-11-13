@@ -45,3 +45,7 @@
 
 // DELETE — Remove a document
 // const deletedUser = await User.findByIdAndDelete(id);
+
+
+//always remove the password from the found user even though that is a hashed password.
+//User.find().select('-password')
