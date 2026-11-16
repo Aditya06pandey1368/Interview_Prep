@@ -23,6 +23,7 @@
 // // // User.find()	Find all matching users	Array
 // // // User.findOne({email})	Find one user by email	Document or null
 // // // User.findById(id)	Find user by MongoDB ID	Document or null
+//example if we want to show profile  const user = await User.findById(req.user.userId).select('-password');
 // // // const users = await User.find();
 
 // // // const user = await User.findOne({

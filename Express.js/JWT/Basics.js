@@ -1,28 +1,27 @@
-// // 1. Authentication vs Authorization
-// // - Authentication: Verifies who the user is.
-// // - Authorization: Checks what the user is allowed to access.
-// // Example: Login verifies your identity. Checking whether you can access the admin dashboard is authorization.
+// 1. Authentication vs Authorization
+//- Authentication: Verifies who the user is.
+// - Authorization: Checks what the user is allowed to access.
+// Example: Login verifies your identity. Checking whether you can access the admin dashboard is authorization.
 
 
-// // 2. What is JWT?
-// // JWT stands for JSON Web Token.
-// // It is a compact, digitally signed token used to transmit claims between parties.
+// 2. What is JWT?
+// JWT stands for JSON Web Token.
+// It is a compact, digitally signed token used to transmit claims between parties.
 
-// // It is commonly used for stateless authentication.\
+// It is commonly used for stateless authentication.\
 
 
 
-// //JWT code for token creation
+//JWT code for token creation
 // const token = jwt.sign(
 //         {
-//             name : found.name,
-//             email : found.email
+//              userId: found._id.toString()
 //         },
 //         process.env.JWT_SECRET,
 //         {expiresIn : "1h"}
 //     )
 
-// //JWT code for verifying 
+//JWT code for verifying 
 // const authHeader = req.headers.authorization;
 //     if (!authHeader) {
 //         return res.status(401).json({
@@ -41,7 +40,8 @@
 //             process.env.JWT_SECRET
 //         );
 
-//         req.user = decoded;
+//         req.user = decoded;  
+           //Here user is not predefined anywhere we are using it only for here and whenever user is authenticated, we can use this user variable to extract user info.
 
 //         return next();
 // }
@@ -49,23 +49,24 @@
 
 // //Bcrypt code
 
-// //Password creation
-// // const hashedPassword = await bcrypt.hash(password,10);
+//Password creation
+// const hashedPassword = await bcrypt.hash(password,10);
 
-// //Password Matching
-// //const isValid = await bcrypt.compare(
-// //     password,
-// //     found.password
-// // );
+//Password Matching
+//const isValid = await bcrypt.compare(
+//     password,
+//     found.password
+// );
 
 
-// // 3. Structure of JWT
-// // A JWT has three parts separated by dots:
-// // header.payload.signature
+// 3. Structure of JWT
+// A JWT has three parts separated by dots:
+// header.payload.signature
 
-// // Part	Purpose
-// // Header	Contains token type and signing algorithm
-// // Payload	Contains user claims
-// // Signature	Helps verify token integrity and authenticity
+// Part	Purpose
+// Header	Contains token type and signing algorithm
+// Payload	Contains user claims
+// Signature	Helps verify token integrity and authenticity
 
-// // Important: JWT payload is encoded, not encrypted by default. Never store passwords or secrets in it.
+
+// Important: JWT payload is encoded, not encrypted by default. Never store passwords or secrets in it.
