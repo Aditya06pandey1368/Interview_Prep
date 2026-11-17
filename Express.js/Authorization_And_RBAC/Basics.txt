@@ -1,0 +1,17 @@
+Authentication: Who are you? Example: Are you a logged-in user?
+Authorization: What are you allowed to do? Example: Are you allowed to delete another user's account?
+
+
+
+How will we implement RBAC?
+We'll add a role field to our existing User schema.
+For example:
+role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user"
+}
+We'll create authorization middleware that checks the user's role before allowing access to certain APIs.
+
+
+

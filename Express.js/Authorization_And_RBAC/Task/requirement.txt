@@ -1,0 +1,27 @@
+Your coding task — Implement RBAC
+
+Requirements:
+
+Part A — User Schema
+- Add a role field.
+- Allow only user and admin.
+- Default role should be user.
+Part B — JWT
+
+- Include the user's role in the JWT payload during login.
+
+Part C — Authorization Middleware
+- Create a middleware that checks whether the logged-in user is an admin.
+- If not authenticated, return 401.
+- If authenticated but not an admin, return 403.
+Part D — Admin API
+
+Create:
+
+GET /admin/users
+
+It should:
+- Require authentication.
+- Allow only admin users.
+- Fetch all users from MongoDB.
+- Never return password hashes.
